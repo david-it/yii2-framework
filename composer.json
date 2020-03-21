@@ -83,7 +83,8 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "2.0.x-dev",
+            "dev-custom": "2.0.33-dev"
         }
     }
 }
