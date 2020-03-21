@@ -810,10 +810,16 @@
                 }
                 $errorElement.removeClass(data.settings.validatingCssClass + ' ' + data.settings.successCssClass)
                   .addClass(data.settings.errorCssClass);
+
+                // Patch: show errors when input {error} is not in the default position
+                $(attribute.container).children(attribute.error).css({"display": "block"});
             } else {
                 $error.empty();
                 $errorElement.removeClass(data.settings.validatingCssClass + ' ' + data.settings.errorCssClass + ' ')
                   .addClass(data.settings.successCssClass);
+                
+                // Patch: hide errors when input {error} is not in the default position
+                $(attribute.container).children(attribute.error).css({"display": "none"});
             }
             attribute.value = getValue($form, attribute);
         }
